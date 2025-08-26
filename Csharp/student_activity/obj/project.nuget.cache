@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jTVSOPTU//s=",
+  "success": true,
+  "projectFilePath": "F:\\Drives\\MyDrive\\Current\\UCL\\Git\\Exercises\\.Projects\\PythonDataAnalysis_Experiment\\Csharp\\student_activity\\student_activity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mbaro\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "C:\\Users\\mbaro\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
