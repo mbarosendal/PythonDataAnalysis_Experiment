@@ -1,6 +1,6 @@
 # C# and Python Analytics Integration
 
-This project demonstrates how an ASP.NET Core backend (C#) can leverage a Python analytics service to generate summaries and PDF reports from student activity data.
+This is a small test project for my [semester portfolio]([url](https://mbarosendal.github.io/Portfolio/)) that demonstrates how an ASP.NET Core backend (C#) can leverage a Python analytics service to generate summaries and PDF reports from student activity data.
 
 ## Features
 - **C# Backend**: Sends student data to the Python service.  
