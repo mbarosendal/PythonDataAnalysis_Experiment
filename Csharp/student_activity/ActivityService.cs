@@ -21,6 +21,8 @@ namespace PythonDataAnalysis_Experiment.Services
         public async Task SendActivitiesAsync()
         {
             var httpClient = new HttpClient();
+            var resultsJson = string.Empty;
+
             var data = new List<StudentActivity>
             {
                 new StudentActivity { StudentId=1, LoginCount=5, TimeSpentMinutes=120, Submissions=13 },
@@ -28,15 +30,23 @@ namespace PythonDataAnalysis_Experiment.Services
                 new StudentActivity { StudentId=3, LoginCount=7, TimeSpentMinutes=200, Submissions=15 }
             };
 
-            var response = await httpClient.PostAsJsonAsync("http://localhost:8000/generate-report", data);
-            var resultJson = await response.Content.ReadAsStringAsync();
-
-            if (resultJson != null)
+            try
             {
-                var date = DateTime.UtcNow;
+                var response = await httpClient.PostAsJsonAsync("http://localhost:8000/generate-report", data);
+                Console.WriteLine("Sending student activities...");
+                resultsJson = await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending student activities: {ex.Message}");
+            }
+
+            if (resultsJson != null)
+            {
+                var date = DateTime.Now;
 
                 Console.WriteLine("Results received:");
-                using JsonDocument doc = JsonDocument.Parse(resultJson);
+                using JsonDocument doc = JsonDocument.Parse(resultsJson);
                 string pdfBase64 = doc.RootElement.GetProperty("report_base64").GetString();
                 byte[] pdfBytes = Convert.FromBase64String(pdfBase64);
                 File.WriteAllBytes($"weekly_report({date:f}).pdf", pdfBytes);

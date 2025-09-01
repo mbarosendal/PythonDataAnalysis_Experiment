@@ -1,6 +1,7 @@
 using PythonDataAnalysis_Experiment.Services;
 
-// 1) After Python service is running, just dotnet run
+/// Instructions ///
+// 1) After Python service is running, just: dotnet run
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-Console.WriteLine("Sending student activities...");
 var activityService = new ActivityService();
 await activityService.SendActivitiesAsync();
 

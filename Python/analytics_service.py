@@ -8,6 +8,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import io
 import base64
 
+### Instructions ###
 # 1) Create venv for project: python -m venv venv ✔️ 
 # 2) Activate venv: .\venv\Scripts\activate (from project root folder)
 # 3) Install dependencies: pip install fastapi uvicorn pandas matplotlib pydantic ✔️ 
@@ -23,12 +24,15 @@ class StudentActivity(BaseModel):
     time_spent_minutes: float = Field(..., alias="timeSpentMinutes")
     submissions: int
 
+# Set endpoint using FastApi
 @app.post("/generate-report")
 async def generate_report(data: list[StudentActivity]):
     print("Received student data! Generating PDF report...")
 
+    # Create DataFrame using pandas library
     df = pd.DataFrame([d.dict() for d in data])
 
+    # Generate summary statistics (C# can use this to display dashboards, metrics, or alerts in real-time)
     summary = {
         "total_students": len(df),
         "average_logins": df["login_count"].mean(),
@@ -36,7 +40,7 @@ async def generate_report(data: list[StudentActivity]):
         "average_submissions": df["submissions"].mean()
     }
 
-    # Generate PDF report with three models
+    # Generate PDF using matplotlib.pyplot library
     buffer = io.BytesIO()
     with PdfPages(buffer) as pdf:
 
