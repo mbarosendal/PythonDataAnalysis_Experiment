@@ -24,4 +24,4 @@ uvicorn analytics_service:app --reload --port 8000
 dotnet run
 ```
 
-The C# backend sends the data to the Python endpoint and returns a PDF with charts, that will be generated in the root folder of the C# project.
+The resulting PDF with charts will be generated in the root folder of the C# project.
