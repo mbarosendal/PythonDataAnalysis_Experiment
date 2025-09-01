@@ -33,11 +33,13 @@ namespace PythonDataAnalysis_Experiment.Services
 
             if (resultJson != null)
             {
+                var date = DateTime.UtcNow;
+
                 Console.WriteLine("Results received:");
                 using JsonDocument doc = JsonDocument.Parse(resultJson);
                 string pdfBase64 = doc.RootElement.GetProperty("report_base64").GetString();
                 byte[] pdfBytes = Convert.FromBase64String(pdfBase64);
-                File.WriteAllBytes("weekly_report.pdf", pdfBytes);
+                File.WriteAllBytes($"weekly_report({date:f}).pdf", pdfBytes);
             }
         }
     }

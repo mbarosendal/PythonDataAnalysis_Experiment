@@ -31,3 +31,4 @@ F:\Drives\MyDrive\Current\UCL\Git\Exercises\.Projects\PythonDataAnalysis_Experim
 F:\Drives\MyDrive\Current\UCL\Git\Exercises\.Projects\PythonDataAnalysis_Experiment\Csharp\student_activity\obj\Debug\net9.0\student_activity.pdb
 F:\Drives\MyDrive\Current\UCL\Git\Exercises\.Projects\PythonDataAnalysis_Experiment\Csharp\student_activity\obj\Debug\net9.0\student_activity.genruntimeconfig.cache
 F:\Drives\MyDrive\Current\UCL\Git\Exercises\.Projects\PythonDataAnalysis_Experiment\Csharp\student_activity\obj\Debug\net9.0\ref\student_activity.dll
+F:\Drives\MyDrive\Current\UCL\Git\Exercises\.Projects\PythonDataAnalysis_Experiment\Csharp\student_activity\obj\Debug\net9.0\student_activity.sourcelink.json

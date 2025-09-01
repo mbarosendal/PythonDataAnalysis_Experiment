@@ -8,15 +8,15 @@ from matplotlib.backends.backend_pdf import PdfPages
 import io
 import base64
 
-# 1) Create venv for project: python -m venv venv
-# 2) Activate venv: .\venv\Scripts\activate
-# 3) Install dependencies: pip install fastapi uvicorn pandas matplotlib pydantic
-# OR if requirements.txt available: pip install -r requirements.txt
+# 1) Create venv for project: python -m venv venv ✔️ 
+# 2) Activate venv: .\venv\Scripts\activate (from project root folder)
+# 3) Install dependencies: pip install fastapi uvicorn pandas matplotlib pydantic ✔️ 
+# OR if requirements.txt available: pip install -r requirements.txt ✔️ 
 # 4) Run with: uvicorn analytics_service:app --reload --port 8000
 
 app = FastAPI(title="LMS Analytics Service")
 
-# Base model with alias to accept C# CamelCase
+# Base model with alias to accept C#'s CamelCase
 class StudentActivity(BaseModel):
     student_id: int = Field(..., alias="studentId")
     login_count: int = Field(..., alias="loginCount")
@@ -36,7 +36,6 @@ async def generate_report(data: list[StudentActivity]):
         "average_submissions": df["submissions"].mean()
     }
 
-    # Save PDF to in-memory buffer
     buffer = io.BytesIO()
     with PdfPages(buffer) as pdf:
 
