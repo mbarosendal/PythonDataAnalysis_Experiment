@@ -1,5 +1,5 @@
-# Root folder of the project (where this script is located)
-$rootDir = $PSScriptRoot
+# Root folder of the project (one level up from the script)
+$rootDir = Join-Path $PSScriptRoot ".." | Resolve-Path
 
 # Join root with the directories for the Python and C# projects
 $pythonDir = Join-Path $rootDir "Python"
@@ -17,4 +17,4 @@ Write-Host "Starting C# ASP.NET Core backend..."
 Set-Location $csharpDir
 dotnet run
 
-Write-Host "Report should be available at in directory: $csharpDir"
+Write-Host "Report should be available in directory: $csharpDir"
