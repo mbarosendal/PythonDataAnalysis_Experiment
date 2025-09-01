@@ -36,6 +36,7 @@ async def generate_report(data: list[StudentActivity]):
         "average_submissions": df["submissions"].mean()
     }
 
+    # Generate PDF report with three models
     buffer = io.BytesIO()
     with PdfPages(buffer) as pdf:
 
