@@ -8,16 +8,16 @@ This project demonstrates how an ASP.NET Core backend (C#) can leverage a Python
 
 ## Setup
 
-### Python Service
+### Python Service terminal
 ```bash
 1) **Create a venv**: python -m venv venv
-2) **Activate the venv**: .\venv\Scripts\activate          # Windows PowerShell
+2) **Activate the venv**: .\venv\Scripts\activate
 3) **Intall dependencies**: pip install fastapi uvicorn pandas matplotlib pydantic
   - # OR if requirements.txt is available: pip install -r requirements.txt
 4) **Run the project**: uvicorn analytics_service:app --reload --port 8000
 ```
 
-### C# Backend
+### C# Backend terminal
 ```
 # 1) **Ensure Python service is running**: dotnet run
 ```
