@@ -32,7 +32,7 @@ async def generate_report(data: list[StudentActivity]):
     # Create DataFrame using pandas library
     df = pd.DataFrame([d.dict() for d in data])
 
-    # Generate summary statistics (C# can use this to display dashboards, metrics, or alerts in real-time)
+    # Generate summary statistics using DataFrame (C# can use this to display dashboards, metrics, or alerts in real-time)
     summary = {
         "total_students": len(df),
         "average_logins": df["login_count"].mean(),
