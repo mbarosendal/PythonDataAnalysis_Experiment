@@ -22,4 +22,7 @@ This is a small test project for my [semester portfolio](https://mbarosendal.git
 # 1) Ensure Python service is running:         dotnet run
 ```
 
+### Alternatively
+To avoid manual setup, just run the test_script.ps1 in /Test_Script/. It should run the projects automatically and generate the report.
+
 The resulting PDF with charts will be generated in the root folder of the C# project.
